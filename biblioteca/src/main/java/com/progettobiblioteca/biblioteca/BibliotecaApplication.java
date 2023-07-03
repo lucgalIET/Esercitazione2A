@@ -1,4 +1,4 @@
-package com.biblioteca;
+package com.progettobiblioteca.biblioteca;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
