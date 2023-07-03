@@ -28,7 +28,7 @@ public class EditoreService {
         return editoreRepository.findById(id);
     }
 
-    public void deleteEditorte(Long id) {
+    public void deleteEditore(Long id) {
         editoreRepository.deleteById(id);
     }
 

@@ -15,7 +15,7 @@ public class LibroService {
     private LibroRepository libroRepository;
 
 
-    public List<LibroEntity> getAllEditore() {
+    public List<LibroEntity> getAllLibro() {
         return libroRepository.findAll();
     }
 

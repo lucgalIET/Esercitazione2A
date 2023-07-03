@@ -33,7 +33,7 @@ public class ClienteService {
         clienteRepository.deleteById(id);
     }
 
-    public ClienteEntity updateAutore(ClienteEntity clienteNew) {
+    public ClienteEntity updateCliente(ClienteEntity clienteNew) {
         if (clienteNew != null) throw new NullPointerException("Compilare tutti i campi");
 
         Optional<ClienteEntity> clienteEntity = getClienteById(clienteNew.getId());
@@ -42,7 +42,7 @@ public class ClienteService {
         return clienteRepository.save(clienteNew);
     }
 
-    public ClienteEntity saveAutore(ClienteEntity entity) {
+    public ClienteEntity saveCliente(ClienteEntity entity) {
         return clienteRepository.save(entity);
     }
 }

@@ -16,7 +16,7 @@ public class PrestitoService {
     @Autowired
     public PrestitoRepository prestitoRepository;
 
-        public List<PrestitoEntity> getAllEditore() {
+        public List<PrestitoEntity> getAllPrestito() {
             return prestitoRepository.findAll();
         }
 
@@ -42,7 +42,7 @@ public class PrestitoService {
             return prestitoRepository.save(prestitoNew);
         }
 
-        public PrestitoEntity saveLibro(PrestitoEntity entity) {
+        public PrestitoEntity savePrestito(PrestitoEntity entity) {
             return prestitoRepository.save(entity);
         }
 

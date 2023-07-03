@@ -23,20 +23,20 @@ public class AutoreService {
         return autoreRepository.getAllAutore();
     }*/
 
-    public Optional<AutoreEntity> getClienteById(Long id) {
+    public Optional<AutoreEntity> getAutoreById(Long id) {
         return autoreRepository.findById(id);
     }
     public void deleteAutore(Long id) {
         autoreRepository.deleteById(id);
     }
 
-    public AutoreEntity updateAutore(AutoreEntity clienteNew){
-        if(clienteNew != null) throw new NullPointerException("Compilare tutti i campi");
+    public AutoreEntity updateAutore(AutoreEntity autoreNew){
+        if(autoreNew != null) throw new NullPointerException("Compilare tutti i campi");
 
-        Optional<AutoreEntity> studenteEntity = getClienteById(clienteNew.getId());
+        Optional<AutoreEntity> studenteEntity = getAutoreById(autoreNew.getId());
 
         if(studenteEntity.isEmpty()) throw new NullPointerException();
-        return autoreRepository.save(clienteNew);
+        return autoreRepository.save(autoreNew);
     }
 
     public AutoreEntity saveAutore(AutoreEntity entity) {
