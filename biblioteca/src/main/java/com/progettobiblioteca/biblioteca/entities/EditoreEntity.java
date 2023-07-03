@@ -1,7 +1,11 @@
 package com.progettobiblioteca.biblioteca.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "editore")
@@ -18,4 +22,8 @@ public class EditoreEntity {
 
     @Column(name = "nome")
     private String nome;
+
+    @OneToMany(mappedBy = "idEditore")
+    @JsonManagedReference
+    private List<LibroEntity> libri = new ArrayList<>();
 }
