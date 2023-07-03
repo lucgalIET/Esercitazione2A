@@ -15,7 +15,7 @@ public class LibroService {
     private LibroRepository libroRepository;
 
 
-    public List<LibroRepository> getAllEditore() {
+    public List<LibroEntity> getAllEditore() {
         return libroRepository.findAll();
     }
 
@@ -24,24 +24,24 @@ public class LibroService {
         return autoreRepository.getAllAutore();
     }*/
 
-    public Optional<LibroRepository> getEditoreById(Long id) {
+    public Optional<LibroEntity> getLibroById(Long id) {
         return libroRepository.findById(id);
     }
 
-    public void deleteEditorte(Long id) {
+    public void deleteLibro(Long id) {
         libroRepository.deleteById(id);
     }
 
-    public LibroRepository updateEditore(LibroRepository libroNew) {
+    public LibroEntity updateLibro(LibroEntity libroNew) {
         if (libroNew != null) throw new NullPointerException("Compilare tutti i campi");
 
-        Optional<LibroRepository> LibroEntity = getEditoreById(libroNew.getId());
+        Optional<LibroEntity> LibroEntity = getLibroById(libroNew.getId());
 
         if (LibroEntity.isEmpty()) throw new NullPointerException();
         return libroRepository.save(libroNew);
     }
 
-    public LibroRepository saveEditore(LibroRepository entity) {
+    public LibroEntity saveLibro(LibroEntity entity) {
         return libroRepository.save(entity);
     }
 }
