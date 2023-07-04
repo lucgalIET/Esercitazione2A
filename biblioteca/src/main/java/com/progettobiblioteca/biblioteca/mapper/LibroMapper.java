@@ -4,13 +4,14 @@ import com.progettobiblioteca.biblioteca.dto.LibroDTO;
 import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.springframework.jmx.export.annotation.ManagedOperation;
+import org.mapstruct.factory.Mappers;
+
 
 @Mapper
 public interface LibroMapper {
 
-    LibroMapper LIBRO_MAPPER = Mapper.getMapper(LibroMapper.class);
-    @Mapping(source = "id", target = "id")
+    LibroMapper LIBRO_MAPPER = Mappers.getMapper(LibroMapper.class);
+    @Mapping(source = "com.", target = "id")
     @Mapping(source = "titolo", target = "titolo")
     @Mapping(source = "genere", target = "genere")
     LibroDTO entityToDto(LibroEntity libroEntity);

@@ -1,6 +1,6 @@
 package com.progettobiblioteca.biblioteca.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -28,10 +28,14 @@ public class LibroEntity {
     @Column(name = "genere")
     private String genere;
 
-    @ManyToOne(targetEntity = AutoreEntity.class)
-    @JoinColumn(name = "id_autore")
+    @ManyToMany
+    @JoinTable(
+            name = "autore_libro",
+            joinColumns = @JoinColumn(name = "id_libro"),
+            inverseJoinColumns = @JoinColumn(name = "id_autore")
+    )
     @JsonManagedReference
-    private AutoreEntity idAutore;
+    private List<AutoreEntity> autori;
 
     @ManyToOne(targetEntity = EditoreEntity.class)
     @JoinColumn(name = "id_editore")

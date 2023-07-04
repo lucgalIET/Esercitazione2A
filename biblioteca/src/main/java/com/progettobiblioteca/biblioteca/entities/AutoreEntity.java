@@ -26,7 +26,7 @@ public class AutoreEntity {
     @Column(name = "cognome")
     private String cognome;
 
-    @OneToMany(mappedBy = "idAutore")
+    @ManyToMany(mappedBy = "autori")
     @JsonBackReference
     private List<LibroEntity> libri = new ArrayList<>();
 }
