@@ -30,12 +30,12 @@ public class LibroEntity {
 
     @ManyToOne(targetEntity = AutoreEntity.class)
     @JoinColumn(name = "id_autore")
-    @JsonBackReference
+    @JsonManagedReference
     private AutoreEntity idAutore;
 
     @ManyToOne(targetEntity = EditoreEntity.class)
     @JoinColumn(name = "id_editore")
-    @JsonBackReference
+    @JsonManagedReference
     private EditoreEntity idEditore;
 
     @OneToMany(mappedBy = "idLibro")

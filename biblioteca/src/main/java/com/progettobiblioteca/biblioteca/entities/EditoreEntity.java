@@ -1,5 +1,6 @@
 package com.progettobiblioteca.biblioteca.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,6 +25,6 @@ public class EditoreEntity {
     private String nome;
 
     @OneToMany(mappedBy = "idEditore")
-    @JsonManagedReference
+    @JsonBackReference
     private List<LibroEntity> libri = new ArrayList<>();
 }
