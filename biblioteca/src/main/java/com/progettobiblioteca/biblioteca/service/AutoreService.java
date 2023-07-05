@@ -18,18 +18,10 @@ public class AutoreService {
         return autoreRepository.findAll();
     }
 
-    //custom
-    /*public List<AutoreEntity> getAllAutoreCustom(){
-        return autoreRepository.getAllAutore();
-    }*/
 
-    public Optional<AutoreEntity> getAutoreById(Long id) {
-        return autoreRepository.findById(id);
-    }
     public void deleteAutore(Long id) {
         autoreRepository.deleteById(id);
     }
-
     public AutoreEntity updateAutore(AutoreEntity autoreNew){
         if(autoreNew != null) throw new NullPointerException("Compilare tutti i campi");
 
@@ -41,5 +33,14 @@ public class AutoreService {
 
     public AutoreEntity saveAutore(AutoreEntity entity) {
         return autoreRepository.save(entity);
+    }
+
+    public Optional<AutoreEntity> getAutoreById(Long id) {
+        return autoreRepository.findById(id);
+    }
+
+    //custom
+    public List<String> getAutoreByCognome(){
+        return autoreRepository.getAutoreByCognome();
     }
 }

@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 public interface LibroMapper {
 
     LibroMapper LIBRO_MAPPER = Mappers.getMapper(LibroMapper.class);
-    @Mapping(source = "com.", target = "id")
+    @Mapping(source = "id", target = "id")
     @Mapping(source = "titolo", target = "titolo")
     @Mapping(source = "genere", target = "genere")
     LibroDTO entityToDto(LibroEntity libroEntity);

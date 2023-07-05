@@ -37,4 +37,11 @@ public class AutoreController {
     public void deleteAutore(@PathVariable Long id){
         autoreService.deleteAutore(id);
     }
+
+    //custom
+    @GetMapping("/autori-by-cognome")
+    public List<String> getAutoreByCognome(){
+        return autoreService.getAutoreByCognome();
+    }
 }
+

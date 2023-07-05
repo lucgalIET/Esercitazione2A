@@ -12,8 +12,9 @@ public interface AutoreRepository extends JpaRepository<AutoreEntity, Long> {
             "FROM cliente ", nativeQuery = true)
     List<AutoreEntity> getAllAutore();
 
-//    @Query(value = "SELECT nome, cognome " +
-//            "FROM autore ", nativeQuery = true)
-//    String getAllAutore;
+    @Query(value = "SELECT nome, cognome " +
+            "FROM autore " +
+            "WHERE cognome LIKE B% ", nativeQuery = true)
+    List<String> getAutoreByCognome();
 
 }
