@@ -1,5 +1,6 @@
 package com.progettobiblioteca.biblioteca.controller;
 
+import com.progettobiblioteca.biblioteca.dto.AutoreDTO;
 import com.progettobiblioteca.biblioteca.entities.AutoreEntity;
 import com.progettobiblioteca.biblioteca.service.AutoreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,11 @@ public class AutoreController {
     @GetMapping("/autori-by-cognome")
     public List<String> getAutoreByCognome(){
         return autoreService.getAutoreByCognome();
+    }
+
+    @GetMapping("/autori-by-cognome-dto")
+    public List<AutoreEntity> getAutoreByCognomeConDto(){
+        return autoreService.getAutoreByCognomeConDto();
     }
 }
 

@@ -1,6 +1,8 @@
 package com.progettobiblioteca.biblioteca.service;
 
+import com.progettobiblioteca.biblioteca.dto.AutoreDTO;
 import com.progettobiblioteca.biblioteca.entities.AutoreEntity;
+import com.progettobiblioteca.biblioteca.mapper.AutoreMapper;
 import com.progettobiblioteca.biblioteca.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,5 +44,11 @@ public class AutoreService {
     //custom
     public List<String> getAutoreByCognome(){
         return autoreRepository.getAutoreByCognome();
+    }
+
+    public List<AutoreEntity> getAutoreByCognomeConDto(){
+        List<AutoreEntity> autori = autoreRepository.getAutoreByCognomeConDto();
+        autori.forEach(AutoreMapper.AUTORE_MAPPER::entityToDto);
+        return autori;
     }
 }
