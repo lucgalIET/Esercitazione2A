@@ -25,7 +25,4 @@ public interface AutoreRepository extends JpaRepository<AutoreEntity, Long> {
             "WHERE cognome LIKE \"B%\" ", nativeQuery = true)
     List<AutoreEntity> getAutoreByCognomeConDto();
 
-    @Query(value = "select l.* from libro l, autore a, autore_libro al where :id = al.id_autore AND l.id = al.id_libro", nativeQuery = true)
-    List<LibroEntity> getLibriByAutore(@Param("id") Long id_autore);
-
 }

@@ -44,4 +44,9 @@ public class LibroController {
     public List<LibroDTO> getLibroByGenere(@PathVariable String genere){
         return libroService.getLibroByGenere(genere);
     }
+
+    @GetMapping("/get-libro-by-autore/{id_autore}")
+    public List<LibroDTO> getLibriByAutore(@PathVariable Long id_autore){
+        return libroService.getLibriByAutore(id_autore);
+    }
 }

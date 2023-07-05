@@ -51,9 +51,6 @@ public class AutoreController {
         return autoreService.getAutoreByCognomeConDto();
     }
 
-    @GetMapping("/get-libro-by-autore/{id_autore}")
-    public List<LibroDTO> getLibriByAutore(@PathVariable Long id_autore){
-        return autoreService.getLibriByAutore(id_autore);
-    }
+
 }
 

@@ -57,4 +57,11 @@ public class LibroService {
         libri.forEach(x -> result.add(LibroMapper.LIBRO_MAPPER.entityToDto(x)));
         return result;
     }
+
+    public List<LibroDTO> getLibriByAutore(Long id_autore){
+        List<LibroEntity> libri = libroRepository.getLibriByAutore(id_autore);
+        List<LibroDTO> result = new ArrayList<>();
+        libri.forEach(x -> result.add(LibroMapper.LIBRO_MAPPER.entityToDto(x)));
+        return result;
+    }
 }

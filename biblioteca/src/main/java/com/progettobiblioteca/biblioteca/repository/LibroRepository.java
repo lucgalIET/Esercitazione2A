@@ -18,4 +18,7 @@ public interface LibroRepository extends JpaRepository<LibroEntity, Long> {
                     "WHERE genere = :genere ", nativeQuery = true)
     List<LibroEntity> getLibroByGenere(@Param("genere") String genere);
 
+    @Query(value = "select distinct l.* from libro l, autore a, autore_libro al where :id = al.id_autore AND l.id = al.id_libro", nativeQuery = true)
+    List<LibroEntity> getLibriByAutore(@Param("id") Long id_autore);
+
 }
