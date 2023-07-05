@@ -37,4 +37,10 @@ public class LibroController {
     public void deleteLibro(@PathVariable Long id){
         libroService.deleteLibro(id);
     }
+
+    //custom
+    @GetMapping("/get-libro-by-genere")
+    public List<String> getLibroByGenere(){
+        return libroService.getLibroByGenere();
+    }
 }

@@ -12,6 +12,9 @@ public interface LibroRepository extends JpaRepository<LibroEntity, Long> {
             "FROM cliente ", nativeQuery = true)
     List<LibroEntity> getAllLibro();
 
-    //@Query(value = "SELECT ")
+    @Query(value = "SELECT titolo " +
+                    "FROM libro " +
+                    "WHERE genere = Horror ", nativeQuery = true)
+    List<String> getLibroByGenere();
 
 }

@@ -44,4 +44,10 @@ public class LibroService {
     public LibroEntity saveLibro(LibroEntity entity) {
         return libroRepository.save(entity);
     }
+
+
+    //custom
+    public List<String> getLibroByGenere(){
+        return libroRepository.getLibroByGenere();
+    }
 }
