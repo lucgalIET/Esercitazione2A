@@ -1,5 +1,6 @@
 package com.progettobiblioteca.biblioteca.controller;
 
+import com.progettobiblioteca.biblioteca.dto.LibroDTO;
 import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import com.progettobiblioteca.biblioteca.service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +40,8 @@ public class LibroController {
     }
 
     //custom
-    @GetMapping("/get-libro-by-genere")
-    public List<String> getLibroByGenere(){
-        return libroService.getLibroByGenere();
+    @GetMapping("/get-libro-by-genere/{genere}")
+    public List<LibroDTO> getLibroByGenere(@PathVariable String genere){
+        return libroService.getLibroByGenere(genere);
     }
 }

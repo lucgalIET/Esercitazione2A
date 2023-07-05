@@ -10,8 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LibroDTO {
-    private Long id;
-    private String genere;
     private String titolo;
 
 }
