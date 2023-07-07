@@ -64,4 +64,11 @@ public class LibroService {
         libri.forEach(x -> result.add(LibroMapper.LIBRO_MAPPER.entityToDto(x)));
         return result;
     }
+
+    public List<LibroDTO> getPrestitiByCliente(String nome){
+        List<LibroEntity> libri = libroRepository.getPrestitiByCliente(nome);
+        List<LibroDTO> result = new ArrayList<>();
+        libri.forEach(x -> result.add(LibroMapper.LIBRO_MAPPER.entityToDto(x)));
+        return result;
+    }
 }

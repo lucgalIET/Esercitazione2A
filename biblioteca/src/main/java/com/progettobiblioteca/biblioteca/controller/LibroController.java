@@ -49,4 +49,9 @@ public class LibroController {
     public List<LibroDTO> getLibriByAutore(@PathVariable Long id_autore){
         return libroService.getLibriByAutore(id_autore);
     }
+
+    @GetMapping("/get-prestito-by-cliente/{nome}")
+    public List<LibroDTO> getPrestitiByCliente(@PathVariable String nome){
+        return libroService.getPrestitiByCliente(nome);
+    }
 }

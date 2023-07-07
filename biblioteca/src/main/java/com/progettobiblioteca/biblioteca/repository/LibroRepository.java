@@ -21,4 +21,12 @@ public interface LibroRepository extends JpaRepository<LibroEntity, Long> {
     @Query(value = "select distinct l.* from libro l, autore a, autore_libro al where :id = al.id_autore AND l.id = al.id_libro", nativeQuery = true)
     List<LibroEntity> getLibriByAutore(@Param("id") Long id_autore);
 
+    @Query(value = "select distinct l.* " +
+            "from prestito p, cliente c, libro l " +
+            "where p.id_libro = l.id AND p.id_cliente in " +
+            "(select cl.id " +
+            "from cliente cl " +
+            "where cl.nome = :nome);", nativeQuery = true)
+    List<LibroEntity> getPrestitiByCliente(@Param("nome") String nome);
+
 }
