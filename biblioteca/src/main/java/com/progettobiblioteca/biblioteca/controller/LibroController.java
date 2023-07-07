@@ -54,4 +54,20 @@ public class LibroController {
     public List<LibroDTO> getPrestitiByCliente(@PathVariable String nome){
         return libroService.getPrestitiByCliente(nome);
     }
+
+    @PostMapping("/save-libro-dto")
+    public LibroEntity saveLibroDTO(@RequestBody LibroDTO libroDTO){
+        return libroService.saveLibroDTO(libroDTO);
+    }
+
+    @GetMapping("/get-all-dto")
+    public List<LibroDTO> getAllDTO(){
+        return libroService.getAllDTO();
+    }
+
+    @GetMapping("/get-by-id-dto/{id}")
+    public LibroDTO getLibroByIdDto(@PathVariable Long id){
+        return libroService.getLibroByIdDTO(id);
+    }
+
 }

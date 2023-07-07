@@ -5,6 +5,7 @@ import com.progettobiblioteca.biblioteca.dto.LibroDTO;
 import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import com.progettobiblioteca.biblioteca.mapper.LibroMapper;
 import com.progettobiblioteca.biblioteca.repository.LibroRepository;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -70,5 +71,26 @@ public class LibroService {
         List<LibroDTO> result = new ArrayList<>();
         libri.forEach(x -> result.add(LibroMapper.LIBRO_MAPPER.entityToDto(x)));
         return result;
+    }
+
+
+    public LibroEntity saveLibroDTO(LibroDTO libroDTO) {
+        if(!libroDTO.getAutori().isEmpty()){
+            LibroEntity libroEntity = LibroMapper.LIBRO_MAPPER.dtoToEntity(libroDTO);
+            return libroRepository.save(libroEntity);
+        }
+        throw new IllegalArgumentException("Non puoi aggiungere un libro senza autori");
+    }
+
+    public List<LibroDTO> getAllDTO(){
+        List<LibroDTO> libriOutput = new ArrayList<>();
+        List<LibroEntity> libri = libroRepository.findAll();
+        libri.forEach(x -> libriOutput.add(LibroMapper.LIBRO_MAPPER.entityToDto(x)));
+        return libriOutput;
+    }
+
+    public LibroDTO getLibroByIdDTO(Long id) {
+        LibroDTO libro = LibroMapper.LIBRO_MAPPER.entityToDto(libroRepository.findById(id).get());
+        return libro;
     }
 }
