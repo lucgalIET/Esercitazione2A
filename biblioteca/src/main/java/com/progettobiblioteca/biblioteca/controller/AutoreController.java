@@ -15,7 +15,7 @@ public class AutoreController {
     @Autowired
     private AutoreService autoreService;
 
-    @GetMapping("/get-all")
+    @GetMapping(" ")
     public List<AutoreEntity> getAllLibri(){
         return autoreService.getAllAutore();
     }
@@ -41,14 +41,14 @@ public class AutoreController {
     }
 
     //custom
-    @GetMapping("/autori-by-cognome")
-    public List<String> getAutoreByCognome(){
-        return autoreService.getAutoreByCognome();
+    @GetMapping("/autori-by-cognome/{iniziale}")
+    public List<String> getAutoreByCognome(@PathVariable String iniziale){
+        return autoreService.getAutoreByCognome(iniziale);
     }
 
-    @GetMapping("/autori-by-cognome-dto")
-    public List<AutoreDTO> getAutoreByCognomeConDto(){
-        return autoreService.getAutoreByCognomeConDto();
+    @GetMapping("/autori-by-cognome-dto/{iniziale}")
+    public List<AutoreDTO> getAutoreByCognomeConDto(@PathVariable String iniziale){
+        return autoreService.getAutoreByCognomeConDto(iniziale);
     }
 
 

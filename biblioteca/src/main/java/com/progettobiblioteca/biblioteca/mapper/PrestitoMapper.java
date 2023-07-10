@@ -7,7 +7,8 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper
 public interface PrestitoMapper {
-    PrestitoEntity PRODOTTO_MAPPER = Mappers.getMapper(PrestitoEntity.class);
+    PrestitoMapper PRESTITO_MAPPER = Mappers.getMapper(PrestitoMapper.class);
+    @Mapping(source = "id", target = "id")
     @Mapping(source = "dataRitiro", target = "dataRitiro")
     @Mapping(source = "dataConsegna", target = "dataConsegna")
     PrestitoDTO entityToDto(PrestitoEntity prodottoEntity);

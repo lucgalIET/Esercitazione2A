@@ -17,12 +17,12 @@ public interface AutoreRepository extends JpaRepository<AutoreEntity, Long> {
 
     @Query(value = "SELECT nome, cognome " +
             "FROM autore " +
-            "WHERE cognome LIKE \"B%\" ", nativeQuery = true)
-    List<String> getAutoreByCognome();
+            "WHERE cognome LIKE :iniziale% ", nativeQuery = true)
+    List<String> getAutoreByCognome(@Param("iniziale") String iniziale);
 
     @Query(value = "SELECT * " +
             "FROM autore " +
-            "WHERE cognome LIKE \"B%\" ", nativeQuery = true)
-    List<AutoreEntity> getAutoreByCognomeConDto();
+            "WHERE cognome LIKE :iniziale% ", nativeQuery = true)
+    List<AutoreEntity> getAutoreByCognomeConDto(@Param("iniziale") String iniziale);
 
 }

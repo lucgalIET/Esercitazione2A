@@ -1,12 +1,15 @@
 package com.progettobiblioteca.biblioteca.service;
 
+import com.progettobiblioteca.biblioteca.dto.PrestitoDTO;
 import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import com.progettobiblioteca.biblioteca.entities.PrestitoEntity;
+import com.progettobiblioteca.biblioteca.mapper.PrestitoMapper;
 import com.progettobiblioteca.biblioteca.repository.LibroRepository;
 import com.progettobiblioteca.biblioteca.repository.PrestitoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,11 +23,6 @@ public class PrestitoService {
             return prestitoRepository.findAll();
         }
 
-        //custom
-    /*public List<AutoreEntity> getAllAutoreCustom(){
-        return autoreRepository.getAllAutore();
-    }*/
-
         public Optional<PrestitoEntity> getPrestitoById(Long id) {
             return prestitoRepository.findById(id);
         }
@@ -34,7 +32,7 @@ public class PrestitoService {
         }
 
         public PrestitoEntity updatePrestito(PrestitoEntity prestitoNew) {
-            if (prestitoNew != null) throw new NullPointerException("Compilare tutti i campi");
+            if (prestitoNew == null) throw new NullPointerException("Compilare tutti i campi");
 
             Optional<PrestitoEntity> prestitoEntity = getPrestitoById(prestitoNew.getId());
 
@@ -44,6 +42,13 @@ public class PrestitoService {
 
         public PrestitoEntity savePrestito(PrestitoEntity entity) {
             return prestitoRepository.save(entity);
+        }
+
+        public List<PrestitoDTO> getPrestitiByMese(Long mese){
+            List<PrestitoDTO> prestitiOutput = new ArrayList<>();
+            List<PrestitoEntity> prestiti = prestitoRepository.getPrestitiByMese(mese);
+            prestiti.forEach(x -> prestitiOutput.add(PrestitoMapper.PRESTITO_MAPPER.entityToDto(x)));
+            return prestitiOutput;
         }
 
 }

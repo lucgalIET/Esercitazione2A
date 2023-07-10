@@ -38,7 +38,7 @@ public class LibroService {
     }
 
     public LibroEntity updateLibro(LibroEntity libroNew) {
-        if (libroNew != null) throw new NullPointerException("Compilare tutti i campi");
+        if (libroNew == null) throw new NullPointerException("Compilare tutti i campi");
 
         Optional<LibroEntity> LibroEntity = getLibroById(libroNew.getId());
 

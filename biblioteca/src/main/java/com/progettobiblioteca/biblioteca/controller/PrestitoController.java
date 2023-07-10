@@ -1,5 +1,6 @@
 package com.progettobiblioteca.biblioteca.controller;
 
+import com.progettobiblioteca.biblioteca.dto.PrestitoDTO;
 import com.progettobiblioteca.biblioteca.entities.PrestitoEntity;
 import com.progettobiblioteca.biblioteca.service.PrestitoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,10 @@ public class PrestitoController {
     @DeleteMapping("/delete/{id}")
     public void deletePrestito(@PathVariable Long id){
         prestitoService.deletePrestito(id);
+    }
+
+    @GetMapping("/get-prestiti-by-mese/{mese}")
+    public List<PrestitoDTO> getPrestitiByMese(@PathVariable Long mese) {
+        return prestitoService.getPrestitiByMese(mese);
     }
 }

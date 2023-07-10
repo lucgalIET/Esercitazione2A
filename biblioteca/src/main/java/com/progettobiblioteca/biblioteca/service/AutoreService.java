@@ -30,7 +30,7 @@ public class AutoreService {
         autoreRepository.deleteById(id);
     }
     public AutoreEntity updateAutore(AutoreEntity autoreNew){
-        if(autoreNew != null) throw new NullPointerException("Compilare tutti i campi");
+        if(autoreNew == null) throw new NullPointerException("Compilare tutti i campi");
 
         Optional<AutoreEntity> studenteEntity = getAutoreById(autoreNew.getId());
 
@@ -47,12 +47,12 @@ public class AutoreService {
     }
 
     //custom
-    public List<String> getAutoreByCognome(){
-        return autoreRepository.getAutoreByCognome();
+    public List<String> getAutoreByCognome(String iniziale){
+        return autoreRepository.getAutoreByCognome(iniziale);
     }
 
-    public List<AutoreDTO> getAutoreByCognomeConDto(){
-        List<AutoreEntity> autori = autoreRepository.getAutoreByCognomeConDto();
+    public List<AutoreDTO> getAutoreByCognomeConDto(String iniziale){
+        List<AutoreEntity> autori = autoreRepository.getAutoreByCognomeConDto(iniziale);
         List<AutoreDTO> result = new ArrayList<>();
         autori.forEach(x -> result.add(AutoreMapper.AUTORE_MAPPER.entityToDto(x)));
 

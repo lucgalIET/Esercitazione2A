@@ -34,7 +34,7 @@ public class ClienteService {
     }
 
     public ClienteEntity updateCliente(ClienteEntity clienteNew) {
-        if (clienteNew != null) throw new NullPointerException("Compilare tutti i campi");
+        if (clienteNew == null) throw new NullPointerException("Compilare tutti i campi");
 
         Optional<ClienteEntity> clienteEntity = getClienteById(clienteNew.getId());
 

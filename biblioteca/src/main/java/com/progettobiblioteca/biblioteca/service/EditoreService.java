@@ -33,7 +33,7 @@ public class EditoreService {
     }
 
     public EditoreEntity updateEditore(EditoreEntity editoreNew) {
-        if (editoreNew != null) throw new NullPointerException("Compilare tutti i campi");
+        if (editoreNew == null) throw new NullPointerException("Compilare tutti i campi");
 
         Optional<EditoreEntity> EditoreEntity = getEditoreById(editoreNew.getId());
 

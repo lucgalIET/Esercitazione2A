@@ -1,5 +1,6 @@
 package com.progettobiblioteca.biblioteca.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,6 +28,6 @@ public class ClienteEntity {
     private String cognome;
 
     @OneToMany(mappedBy = "idCliente")
-    @JsonManagedReference
+    @JsonIgnore
     private List<PrestitoEntity> prestiti = new ArrayList<>();
 }
