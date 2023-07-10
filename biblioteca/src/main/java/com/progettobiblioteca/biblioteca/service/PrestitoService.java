@@ -1,10 +1,8 @@
 package com.progettobiblioteca.biblioteca.service;
 
 import com.progettobiblioteca.biblioteca.dto.PrestitoDTO;
-import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import com.progettobiblioteca.biblioteca.entities.PrestitoEntity;
 import com.progettobiblioteca.biblioteca.mapper.PrestitoMapper;
-import com.progettobiblioteca.biblioteca.repository.LibroRepository;
 import com.progettobiblioteca.biblioteca.repository.PrestitoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

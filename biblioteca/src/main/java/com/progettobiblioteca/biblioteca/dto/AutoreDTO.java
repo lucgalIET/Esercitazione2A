@@ -1,6 +1,5 @@
 package com.progettobiblioteca.biblioteca.dto;
 
-import com.progettobiblioteca.biblioteca.entities.AutoreEntity;
 import lombok.*;
 
 @NoArgsConstructor

@@ -1,12 +1,8 @@
 package com.progettobiblioteca.biblioteca.service;
 
-import com.progettobiblioteca.biblioteca.controller.AutoreController;
 import com.progettobiblioteca.biblioteca.dto.AutoreDTO;
-import com.progettobiblioteca.biblioteca.dto.LibroDTO;
 import com.progettobiblioteca.biblioteca.entities.AutoreEntity;
-import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import com.progettobiblioteca.biblioteca.mapper.AutoreMapper;
-import com.progettobiblioteca.biblioteca.mapper.LibroMapper;
 import com.progettobiblioteca.biblioteca.repository.AutoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

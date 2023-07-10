@@ -1,8 +1,6 @@
 package com.progettobiblioteca.biblioteca.service;
 
-import com.progettobiblioteca.biblioteca.entities.AutoreEntity;
 import com.progettobiblioteca.biblioteca.entities.ClienteEntity;
-import com.progettobiblioteca.biblioteca.repository.AutoreRepository;
 import com.progettobiblioteca.biblioteca.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

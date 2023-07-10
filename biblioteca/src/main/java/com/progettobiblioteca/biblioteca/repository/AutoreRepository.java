@@ -1,8 +1,6 @@
 package com.progettobiblioteca.biblioteca.repository;
 
-import com.progettobiblioteca.biblioteca.dto.AutoreDTO;
 import com.progettobiblioteca.biblioteca.entities.AutoreEntity;
-import com.progettobiblioteca.biblioteca.entities.LibroEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
