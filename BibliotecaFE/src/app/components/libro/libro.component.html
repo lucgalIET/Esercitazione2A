@@ -1,0 +1,17 @@
+<p>libro works!</p>
+<h2>CIAOOOOOOO</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titolo</th>
+            <th>Genere</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let libro of libri">
+            <td>{{libro.titolo}}</td>
+            <td>{{libro.genere}}</td>
+        </tr>
+    </tbody>
+</table>
