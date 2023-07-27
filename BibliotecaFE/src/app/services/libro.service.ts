@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';0
 import { Libro } from '../models/libro';
 import { Observable } from 'rxjs';
 
-const urlLibroEndPoint = '/biblioteca/libro';
+const urlLibroEndPoint = 'localhost:8080/biblioteca/libro';
 
 @Injectable({
   providedIn: 'root'
